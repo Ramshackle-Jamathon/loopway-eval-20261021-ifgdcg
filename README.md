@@ -17,6 +17,7 @@ parseDuration('250ms');    // 0.25
 parseDuration('1s250ms');  // 1.25
 parseDuration('1m 500ms'); // 60.5
 parseDuration('0.5ms');    // 0.0005
+parseDuration('1ms2ms');   // throws RangeError (repeated milliseconds)
 ```
 
 Empty strings, negative amounts, repeated units, unsupported units, leftover text, and non-finite totals throw `RangeError`. Non-string inputs throw `TypeError`.
