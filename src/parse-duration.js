@@ -1,11 +1,11 @@
-const seconds = { s: 1, m: 60, h: 3600 };
+const seconds = { ms: 0.001, s: 1, m: 60, h: 3600 };
 
 export function parseDuration(value) {
   if (typeof value !== 'string') throw new TypeError('Duration must be a string');
   const input = value.trim();
   if (!input) throw new RangeError('Invalid duration');
 
-  const component = /(\d+(?:\.\d+)?)(s|m|h)\s*/iy;
+  const component = /(\d+(?:\.\d+)?)(ms|s|m|h)\s*/iy;
   const seen = new Set();
   let position = 0;
   let total = 0;
